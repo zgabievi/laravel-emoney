@@ -14,6 +14,7 @@ eMoney Payment System for [Laravel 5.*](http://laravel.com/)
     - [Laravel](#laravel)
 - [Usage](#usage)
 - [Example](#example)
+- [Codes](#codes)
 - [Config](#config)
 - [License](#license)
 
@@ -186,6 +187,30 @@ Outputs:
   }
 }
 ```
+
+## Codes
+
+| Key | Value                    | Description                                                             |
+|-----|--------------------------|-------------------------------------------------------------------------|
+| 1   | Success                  | OK                                                                      |
+| 11  | Unknown                  | Unknown error                                                           |
+| 12  | InvalidHash              | Invalid hash                                                            |
+| 13  | InvalidParameters        | Some of the input parameters are invalid                                |
+| 14  | InvalidDistributor       | Invalid distributor name                                                |
+| 16  | ServicesProviderNotFound | Service provider not found                                              |
+| 17  | AbonentNotFound          | Abonent not found                                                       |
+| 19  | ParameterNotFound        | Parameter not found                                                     |
+| 20  | ParameterValueNotFound   | Parameter value not found                                               |
+| 30  | Error                    | General error                                                           |
+| 31  | ServiceNotFound          | Service not found                                                       |
+| 34  | ServiceInternalError     | Service internal error                                                  |
+| 40  | WrongAmount              | Wrong amount                                                            |
+| 41  | ServiceTimeout           | Operation timeout                                                       |
+| 42  | PaymentWontBeAccepted    | Payment wont be accepted. Your company has not enough balance in eMoney |
+| 43  | AccountOperationDenied   | Account operation denied                                                |
+| 44  | AmountLessThanMin        | Amount is less than acceptable minumum                                  |
+| 45  | AmountMoreThanMax        | Amount is more than acceptable maximum                                  |
+| 46  | TransactionLimitExceeded | Transaction limit exceeded                                              |
 
 ## Config
 
