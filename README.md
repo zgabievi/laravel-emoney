@@ -57,16 +57,16 @@ Outputs:
 
 ```json
 {
-  Code: 1,
-  ExtraInfo: null,
-  ID: "374E9088F2FA45F5ABF411DFE9B06D36",
-  Message: "Success",
-  SystemCode: "OK",
-  Value: {
-    AccountBalance: {
-      Account: 110100015,
-      Balance: "0",
-      Currency: "GEL"
+  "Code": 1,
+  "ExtraInfo": null,
+  "ID": "374E9088F2FA45F5ABF411DFE9B06D36",
+  "Message": "Success",
+  "SystemCode": "OK",
+  "Value": {
+    "AccountBalance": {
+      "Account": 110100015,
+      "Balance": "0",
+      "Currency": "GEL"
     }
   }
 }
@@ -104,84 +104,36 @@ Outputs:
 
 ```json
 {
-  Code: 1,
-  ExtraInfo: null,
-  ID: "3D3FFA52900E468CA3E3F39CD6819E44",
-  Message: "Success",
-  SystemCode: "OK",
-  Value: {
-    StatementEntry: [
+  "Code": 1,
+  "ExtraInfo": null,
+  "ID": "3D3FFA52900E468CA3E3F39CD6819E44",
+  "Message": "Success",
+  "SystemCode": "OK",
+  "Value": {
+    "StatementEntry": [
       {
-        Amount: "15",
-        Code: 866730178,
-        Credit: 110100052,
-        Currency: "GEL",
-        Date: "2016-01-12T00:00:00",
-        Debit: 110100015,
-        Description: "12345678910, 02.04.1994, Test #1",
-        ID: 16673017,
-        Status: "Canceled",
-        Type: "Test transaction"
+        "Amount": "15",
+        "Code": 866730178,
+        "Credit": 110100052,
+        "Currency": "GEL",
+        "Date": "2016-01-12T00:00:00",
+        "Debit": 110100015,
+        "Description": "12345678910, 02.04.1994, Test #1",
+        "ID": 16673017,
+        "Status": "Canceled",
+        "Type": "Test transaction"
       },
       {
-        Amount: "1",
-        Code: 866730178,
-        Credit: 800000003,
-        Currency: "GEL",
-        Date: "2016-01-12T00:00:00",
-        Debit: 110100015,
-        Description: "Test transaction",
-        ID: 16673019,
-        Status: "Canceled",
-        Type: "Test transaction"
-      },
-      {
-        Amount: "10",
-        Code: 866833611,
-        Credit: 110100052,
-        Currency: "GEL",
-        Date: "2016-01-12T00:00:00",
-        Debit: 110100015,
-        Description: "12345678910, 02.04.1994, Test #2",
-        ID: 16683361,
-        Status: "Canceled",
-        Type: "Test transaction"
-      },
-      {
-        Amount: "1",
-        Code: 866833611,
-        Credit: 800000003,
-        Currency: "GEL",
-        Date: "2016-01-12T00:00:00",
-        Debit: 110100015,
-        Description: "Test transaction",
-        ID: 16683362,
-        Status: "Canceled",
-        Type: "Test transaction"
-      },
-      {
-        Amount: "10",
-        Code: 866834724,
-        Credit: 110100052,
-        Currency: "GEL",
-        Date: "2016-01-12T00:00:00",
-        Debit: 110100015,
-        Description: "12345678910, 02.04.1994, Test #3",
-        ID: 16683472,
-        Status: "Canceled",
-        Type: "Test transaction"
-      },
-      {
-        Amount: "1",
-        Code: 866834724,
-        Credit: 800000003,
-        Currency: "GEL",
-        Date: "2016-01-12T00:00:00",
-        Debit: 110100015,
-        Description: "Test transaction",
-        ID: 16683473,
-        Status: "Canceled",
-        Type: "Test transaction"
+        "Amount": "1",
+        "Code": 866730178,
+        "Credit": 800000003,
+        "Currency": "GEL",
+        "Date": "2016-01-12T00:00:00",
+        "Debit": 110100015,
+        "Description": "Test transaction",
+        "ID": 16673019,
+        "Status": "Canceled",
+        "Type": "Test transaction"
       }
     ]
   }
