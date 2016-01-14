@@ -1,70 +1,205 @@
-# :package_name
+# eMoney
 
-[![Latest Version on Packagist][ico-version]][link-packagist]
-[![Software License][ico-license]](LICENSE.md)
-[![Build Status][ico-travis]][link-travis]
-[![Coverage Status][ico-scrutinizer]][link-scrutinizer]
-[![Quality Score][ico-code-quality]][link-code-quality]
-[![Total Downloads][ico-downloads]][link-downloads]
+[![eMoney](http://i.imgsafe.org/f7905ef.jpg)](https://github.com/zgabievi/eMoney)
 
-**Note:** Replace ```:author_name``` ```:author_username``` ```:author_website``` ```:author_email``` ```:vendor``` ```:package_name``` ```:package_description``` with their correct values in [README.md](README.md), [CHANGELOG.md](CHANGELOG.md), [CONTRIBUTING.md](CONTRIBUTING.md), [LICENSE.md](LICENSE.md) and [composer.json](composer.json) files, then delete this line.
+[![Latest Stable Version](https://poser.pugx.org/zgabievi/e-money/version.png)](https://packagist.org/packages/zgabievi/e-money)
+[![Total Downloads](https://poser.pugx.org/zgabievi/e-money/d/total.png)](https://packagist.org/packages/zgabievi/e-money)
+[![License](https://poser.pugx.org/zgabievi/e-money/license)](https://packagist.org/packages/zgabievi/e-money)
 
-This is where your description should go. Try and limit it to a paragraph or two, and maybe throw in a mention of what
-PSRs you support to avoid any confusion with users and contributors.
+eMoney Payment System for [Laravel 5.*](http://laravel.com/)
 
-## Install
+## Table of Contents
+- [Installation](#installation)
+    - [Composer](#composer)
+    - [Laravel](#laravel)
+- [Usage](#usage)
+- [Example](#example)
+- [Config](#config)
+- [License](#license)
 
-Via Composer
+## Installation
 
-``` bash
-$ composer require :vendor/:package_name
+### Composer
+
+Run composer command in your terminal.
+
+    composer require zgabievi/e-money
+
+### Laravel
+
+Open `config/app.php` and find the `providers` key. Add `eMoneyServiceProvider` to the array.
+
+```php
+Gabievi\eMoney\eMoneyServiceProvider::class
+```
+
+Find the `aliases` key and add `Facade` to the array. 
+
+```php
+'eMoney' => Gabievi\eMoney\eMoneyFacade::class
 ```
 
 ## Usage
 
-``` php
-$skeleton = new League\Skeleton();
-echo $skeleton->echoPhrase('Hello, League!');
+There is main method with will call method by first parameter.
+And it will return the result of the request:
+
+`eMoney::GetResult($method, ...$args);`
+
+Example:
+
+```php
+return eMoney::GetResult('GetBalance');
 ```
 
-## Change log
+Outputs:
 
-Please see [CHANGELOG](CHANGELOG.md) for more information what has changed recently.
-
-## Testing
-
-``` bash
-$ composer test
+```json
+{
+  Code: 1,
+  ExtraInfo: null,
+  ID: "374E9088F2FA45F5ABF411DFE9B06D36",
+  Message: "Success",
+  SystemCode: "OK",
+  Value: {
+    AccountBalance: {
+      Account: 110100015,
+      Balance: "0",
+      Currency: "GEL"
+    }
+  }
+}
 ```
 
-## Contributing
+Behind the scene it does something like this:
 
-Please see [CONTRIBUTING](CONTRIBUTING.md) and [CONDUCT](CONDUCT.md) for details.
+```php
+return (array)eMoney::GetBalance(...$args)->GetBalanceResult;
+```
 
-## Security
+---
 
-If you discover any security related issues, please email :author_email instead of using the issue tracker.
+This is the list of all methods:
 
-## Credits
+- `GetServiceGroups();`
+- `GetServices($group_id);`
+- `GetServiceProperties($service_id);`
+- `GetServiceParameterReferences($service_parameter_id);`
+- `GetInfo($service_id, $parameters);`
+- `Pay($service_id, $amount, $currency, $txn_id, $parameters);`
+- `GetTransactionDetails($txn_id);`
+- `GetTransactionInfo($txn_id);`
+- `GetStatement($start_date, $end_date);`
+- `GetBalance();`
+- `ConfirmPayment($txn_id, $amount, $currency, $parameters);`
 
-- [:author_name][link-author]
-- [All Contributors][link-contributors]
+## Example
+
+```php
+return eMoney::GetResult('GetStatement', '01/01/2016', '01/14/2016');
+```
+
+Outputs:
+
+```json
+{
+  Code: 1,
+  ExtraInfo: null,
+  ID: "3D3FFA52900E468CA3E3F39CD6819E44",
+  Message: "Success",
+  SystemCode: "OK",
+  Value: {
+    StatementEntry: [
+      {
+        Amount: "15",
+        Code: 866730178,
+        Credit: 110100052,
+        Currency: "GEL",
+        Date: "2016-01-12T00:00:00",
+        Debit: 110100015,
+        Description: "12345678910, 02.04.1994, Test #1",
+        ID: 16673017,
+        Status: "Canceled",
+        Type: "Test transaction"
+      },
+      {
+        Amount: "1",
+        Code: 866730178,
+        Credit: 800000003,
+        Currency: "GEL",
+        Date: "2016-01-12T00:00:00",
+        Debit: 110100015,
+        Description: "Test transaction",
+        ID: 16673019,
+        Status: "Canceled",
+        Type: "Test transaction"
+      },
+      {
+        Amount: "10",
+        Code: 866833611,
+        Credit: 110100052,
+        Currency: "GEL",
+        Date: "2016-01-12T00:00:00",
+        Debit: 110100015,
+        Description: "12345678910, 02.04.1994, Test #2",
+        ID: 16683361,
+        Status: "Canceled",
+        Type: "Test transaction"
+      },
+      {
+        Amount: "1",
+        Code: 866833611,
+        Credit: 800000003,
+        Currency: "GEL",
+        Date: "2016-01-12T00:00:00",
+        Debit: 110100015,
+        Description: "Test transaction",
+        ID: 16683362,
+        Status: "Canceled",
+        Type: "Test transaction"
+      },
+      {
+        Amount: "10",
+        Code: 866834724,
+        Credit: 110100052,
+        Currency: "GEL",
+        Date: "2016-01-12T00:00:00",
+        Debit: 110100015,
+        Description: "12345678910, 02.04.1994, Test #3",
+        ID: 16683472,
+        Status: "Canceled",
+        Type: "Test transaction"
+      },
+      {
+        Amount: "1",
+        Code: 866834724,
+        Credit: 800000003,
+        Currency: "GEL",
+        Date: "2016-01-12T00:00:00",
+        Debit: 110100015,
+        Description: "Test transaction",
+        ID: 16683473,
+        Status: "Canceled",
+        Type: "Test transaction"
+      }
+    ]
+  }
+}
+```
+
+## Config
+
+Publish eMoney config file using command:
+
+```
+php artisan vendor:publish
+```
+
+Created file `config\eMoney.php`. Inside you can change configuration as you wish.
 
 ## License
 
-The MIT License (MIT). Please see [License File](LICENSE.md) for more information.
+eMoney is an open-sourced laravel package licensed under the MIT license
 
-[ico-version]: https://img.shields.io/packagist/v/:vendor/:package_name.svg?style=flat-square
-[ico-license]: https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square
-[ico-travis]: https://img.shields.io/travis/:vendor/:package_name/master.svg?style=flat-square
-[ico-scrutinizer]: https://img.shields.io/scrutinizer/coverage/g/:vendor/:package_name.svg?style=flat-square
-[ico-code-quality]: https://img.shields.io/scrutinizer/g/:vendor/:package_name.svg?style=flat-square
-[ico-downloads]: https://img.shields.io/packagist/dt/:vendor/:package_name.svg?style=flat-square
-
-[link-packagist]: https://packagist.org/packages/:vendor/:package_name
-[link-travis]: https://travis-ci.org/:vendor/:package_name
-[link-scrutinizer]: https://scrutinizer-ci.com/g/:vendor/:package_name/code-structure
-[link-code-quality]: https://scrutinizer-ci.com/g/:vendor/:package_name
-[link-downloads]: https://packagist.org/packages/:vendor/:package_name
-[link-author]: https://github.com/:author_username
-[link-contributors]: ../../contributors
+## TODO
+- [ ] Create tests
