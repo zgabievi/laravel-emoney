@@ -5,8 +5,8 @@
 [![Latest Stable Version](https://poser.pugx.org/zgabievi/e-money/version?format=flat-square)](https://packagist.org/packages/zgabievi/e-money) [![Total Downloads](https://poser.pugx.org/zgabievi/e-money/d/total?format=flat-square)](https://packagist.org/packages/zgabievi/e-money) [![License](https://poser.pugx.org/zgabievi/e-money/license?format=flat-square)](https://packagist.org/packages/zgabievi/e-money)
 
 | eMoney |     |
-|:----------:|:----|
-| [![eMoney](https://i.imgsafe.org/fbbe1c636f.png)](https://github.com/zgabievi/laravel-emoney) | eMoney payment system integration for [Laravel 5.*](http://laravel.com/). Trying to make it perfect, easy to use and awesome package :tada: Pull requests are welcome. |
+|:------:|:----|
+| [![eMoney](https://i.imgsafe.org/fbbe1c636f.png)](https://github.com/zgabievi/laravel-emoney) | eMoney payment system integration for [Laravel 5.*](http://laravel.com/) :sunglasses: Trying to make it perfect, easy to use and awesome package :tada: Pull requests are welcome. |
 
 ## Table of Contents
 - [Installation](#installation)
