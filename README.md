@@ -1,12 +1,12 @@
-# eMoney
+# laravel-emoney
 
-[![eMoney](https://i.imgsafe.org/fbbe1c636f.png)](https://github.com/zgabievi/eMoney)
+> Some great updates are comming soon...
 
-[![Latest Stable Version](https://poser.pugx.org/zgabievi/e-money/version.png)](https://packagist.org/packages/zgabievi/e-money)
-[![Total Downloads](https://poser.pugx.org/zgabievi/e-money/d/total.png)](https://packagist.org/packages/zgabievi/e-money)
-[![License](https://poser.pugx.org/zgabievi/e-money/license)](https://packagist.org/packages/zgabievi/e-money)
+[![Latest Stable Version](https://poser.pugx.org/zgabievi/e-money/version?format=flat-square)](https://packagist.org/packages/zgabievi/e-money) [![Total Downloads](https://poser.pugx.org/zgabievi/e-money/d/total?format=flat-square)](https://packagist.org/packages/zgabievi/e-money) [![License](https://poser.pugx.org/zgabievi/e-money/license?format=flat-square)](https://packagist.org/packages/zgabievi/e-money)
 
-eMoney Payment System for [Laravel 5.*](http://laravel.com/)
+| eMoney |     |
+|:----------:|:----|
+| [![eMoney](https://i.imgsafe.org/fbbe1c636f.png)](https://github.com/zgabievi/laravel-emoney) | eMoney payment system integration for [Laravel 5.*](http://laravel.com/). Trying to make it perfect, easy to use and awesome package :tada: Pull requests are welcome. |
 
 ## Table of Contents
 - [Installation](#installation)
@@ -179,4 +179,7 @@ Created file `config\eMoney.php`. Inside you can change configuration as you wis
 eMoney is an open-sourced laravel package licensed under the MIT license
 
 ## TODO
-- [ ] Create tests
+- [ ] Create tests to check funtionality
+- [ ] Create separated file for response codes
+- [ ] Make artisan command that will write this response codes in php file
+- [ ] Make eMoney object more Model like
