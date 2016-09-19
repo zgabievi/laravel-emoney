@@ -176,7 +176,7 @@ Created file `config\eMoney.php`. Inside you can change configuration as you wis
 
 ## License
 
-eMoney is an open-sourced laravel package licensed under the MIT license
+laravel-emoney is licensed under a  [MIT License](https://github.com/zgabievi/laravel-promocodes/blob/master/LICENSE).
 
 ## TODO
 - [ ] Create tests to check funtionality
