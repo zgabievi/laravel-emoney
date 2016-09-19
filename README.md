@@ -1,6 +1,6 @@
 # eMoney
 
-[![eMoney](http://i.imgsafe.org/f7905ef.jpg)](https://github.com/zgabievi/eMoney)
+[![eMoney](https://i.imgsafe.org/fbbe1c636f.png)](https://github.com/zgabievi/eMoney)
 
 [![Latest Stable Version](https://poser.pugx.org/zgabievi/e-money/version.png)](https://packagist.org/packages/zgabievi/e-money)
 [![Total Downloads](https://poser.pugx.org/zgabievi/e-money/d/total.png)](https://packagist.org/packages/zgabievi/e-money)
